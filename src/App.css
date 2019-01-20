@@ -18,6 +18,18 @@
   color: white;
 }
 
+.tabContainer{
+  /* position: relative; */
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.item {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 40px;
+}
 .App-link {
   color: #61dafb;
 }
