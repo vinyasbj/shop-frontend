@@ -42,3 +42,12 @@
     transform: rotate(360deg);
   }
 }
+
+.Card-image{
+
+}
+
+.ui.fluid.card{
+  width: 80%;
+  left: 10%;
+}
