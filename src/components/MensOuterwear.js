@@ -41,7 +41,7 @@ class MensOuterwear extends  React.Component {
                   return <Grid.Column >
                    <Link to={{ 
                             pathname: `/product/${product._id}`,
-                            state: { product: {id: product._id,name: product.name,price: product.price,description: product.description, stock: product.stock} }
+                            state: { product: {id: product._id,name: product.name,price: product.price,description: product.description, stock: product.stock,image: "https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg" } }
                           }}>
                    <Image  src="https://shop.polymer-project.org/esm-bundled/data/images/10-14157A.jpg" />
                     <div className="content ">

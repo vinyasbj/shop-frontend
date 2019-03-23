@@ -42,6 +42,8 @@ class Home extends  React.Component {
                     <img id="img" alt="Men's Outerwear" Style="opacity: 1; transition: opacity 0.5s ease 0s; margin-bottom: 40px; outline: none;  float: left; width: 126%; height: 73%;" src="https://shop.polymer-project.org/esm-bundled/images/ladies_tshirts.jpg"/>
                     <h4 className="item" Style= " margin-top: 3%;">Ladies Outerwear</h4>
                     <button className="ui inverted secondary button " Style= "margin-left: 42%;">SHOP NOW</button>
+                    <br/>
+                    <br/>
                 </div>
             </div>
             </div>
