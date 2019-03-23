@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import api from '../config/api';
 import Navbar from './navbar';
-import { Divider, Grid, Image, Segment ,Dropdown} from 'semantic-ui-react';
+import { Divider, Grid, Image, Segment ,Dropdown,Button} from 'semantic-ui-react';
 // import './App.css';
 
 class Product extends Component {
@@ -58,6 +58,19 @@ class Product extends Component {
             <li>Drawstring bottom for adjustable fit.</li>
             <li>Raglan sleeves.</li>
             <li>Available in forest green with the white Google logo embroidered at left chest.</li>
+            <br/>
+            <br/>
+            <Button content='Add To Cart' secondary Style= "display: inline-block; box-sizing: border-box;
+    border: 2px solid #000;
+    background-color: #FFF; font-weight: 500;
+    color: var(--app-primary-color);
+    margin: 0;
+    padding: 8px 44px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 0;
+    outline: none;" />
         </Grid.Column>
       </Grid>
     {/* <Divider vertical>And</Divider> */}
