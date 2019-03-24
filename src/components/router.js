@@ -9,12 +9,14 @@ import LadiesOuterwear from '../components/LadiesOuterwear';
 import MensTShirts from '../components/MensTShirts';
 import LadiesTShirts from '../components/LadiesTShirts';
 import Product from "./products";
+import Login from "./login";
 
 const Router = () => (
   <BrowserRouter>
     <Switch>
       {/* <Route path="/" component={App} exact /> */}
         <Route path={"/"} component={Home} exact ></Route>  
+        <Route path={"/Login"} component={Login} exact ></Route>  
         <Route path={"/MensOuterwear"} component={MensOuterwear} exact ></Route>
         <Route path={"/LadiesOuterwear"} component={LadiesOuterwear} exact ></Route>
         <Route path={"/MensT-Shirts"} component={MensTShirts} exact ></Route>
