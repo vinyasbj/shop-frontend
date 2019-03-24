@@ -1,10 +1,30 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Link,Route} from 'react-router-dom';
-import { Card, Icon, Image } from 'semantic-ui-react';
+import { Card, Grid,Icon, Image } from 'semantic-ui-react';
 import Navbar from '../components/navbar';
+import axios from 'axios';
+import api from '../config/api';
+import Product from './products';
 import '../App.css';
 
 class MensTShirts extends  React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+          products: []
+        }
+      }
+
+      componentDidMount(){
+        axios.get(`${api.tickets.baseUrl}/categories/5c4490f06887ae08f4894e49/products`).then((response)=>{
+            this.setState({
+              products: response.data,
+            })
+            console.log('====================================')
+            console.log(this.state.products)
+            console.log('====================================')
+        })
+      }
     render(){
         return(
             <div>
@@ -12,20 +32,22 @@ class MensTShirts extends  React.Component {
                 <div className="ui grid button">
                 <img id="img" alt="Men's Outerwear" Style="opacity: 1; transition: opacity 0.5s ease 0s;margin-bottom: 40px; outline: none;  float: left; width: 126%; height: 73%;" src="https://shop.polymer-project.org/esm-bundled/images/mens_tshirts.jpg"/>
                </div> 
-               <Card>
-                    <Image src='/images/avatar/large/daniel.jpg' />
-                    <Card.Content>
-                    <Card.Header>Daniel</Card.Header>
-                    <Card.Meta>Joined in 2016</Card.Meta>
-                    <Card.Description>Daniel is a comedian living in Nashville.</Card.Description>
-                    </Card.Content>
-                    <Card.Content extra>
-                    <a>
-                        <Icon name='user' />
-                        10 Friends
-                    </a>
-                    </Card.Content>
-                </Card>
+               <Grid container columns={3}>
+               {this.state.products.map(product => {
+                  return <Grid.Column >
+                   <Link to={{ 
+                            pathname: `/product/${product._id}`,
+                            state: { product: {id: product._id,name: product.name,price: product.price,description: product.description, stock: product.stock,image: "https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg" } }
+                          }}>
+                   <Image  src="https://shop.polymer-project.org/esm-bundled/data/images/10-14157A.jpg" />
+                    <div className="content ">
+                      <p className="header" Style= "text-align: center;">{product.name}</p>
+                      <p Style= "text-align: center;">${product.price}</p>
+                    </div> 
+                    </Link>
+                    </Grid.Column> 
+                })}
+                </Grid>
             </div>
         )
     }
