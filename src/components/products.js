@@ -60,17 +60,7 @@ class Product extends Component {
             <li>Available in forest green with the white Google logo embroidered at left chest.</li>
             <br/>
             <br/>
-            <Button content='Add To Cart' secondary Style = "display: inline-block; box-sizing: border-box;
-    border: 2px solid #000;
-    background-color: #FFF; font-weight: 500;
-    color: var(--app-primary-color);
-    margin: 0;
-    padding: 8px 44px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-radius: 0;
-    outline: none;" />
+            <Button content='Add To Cart' secondary Style = "display: inline-block; box-sizing: border-box;border: 2px solid #000;background-color: #FFF; font-weight: 500;color: var(--app-primary-color);margin: 0;padding: 8px 44px;text-align: center;text-decoration: none;text-transform: uppercase;border-radius: 0;outline: none;" />
         </Grid.Column>
       </Grid>
     {/* <Divider vertical>And</Divider> */}

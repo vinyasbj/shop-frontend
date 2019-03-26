@@ -1,6 +1,6 @@
 const api = {
     tickets: {
-        baseUrl: "http://localhost:3000"
+        baseUrl: "https://shop-ify.herokuapp.com"
     }
 }
 

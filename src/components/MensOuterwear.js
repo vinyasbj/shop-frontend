@@ -20,7 +20,7 @@ class MensOuterwear extends  React.Component {
       }
 
     componentDidMount(){
-        axios.get(`${api.tickets.baseUrl}/categories/5c40a166c09638100cd4c441/products`).then((response)=>{
+        axios.get(`${api.tickets.baseUrl}/categories/5c9a40ab738fd44d787cc1b2/products`).then((response)=>{
             this.setState({
               products: response.data,
             })

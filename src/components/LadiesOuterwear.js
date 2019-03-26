@@ -15,7 +15,7 @@ class LadiesOuterwear extends  React.Component {
       }
 
       componentDidMount(){
-        axios.get(`${api.tickets.baseUrl}/categories/5c40a181c09638100cd4c442/products`).then((response)=>{
+        axios.get(`${api.tickets.baseUrl}/categories/5c9a4a306cd29400246213fa/products`).then((response)=>{
             this.setState({
               products: response.data,
             })

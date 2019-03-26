@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 import { Button, Divider,Container, Form, Grid, Segment } from 'semantic-ui-react';
 import {BrowserRouter,Link,Route} from 'react-router-dom';
+import api from '../config/api';
+import axios from 'axios';
 class Login extends  React.Component {
+    componentDidMount(){
+        axios.get(`${api.tickets.baseUrl}/categories/5c40a166c09638100cd4c441/products`).then((response)=>{
+            this.setState({
+              products: response.data,
+            })
+            console.log('====================================')
+            console.log(this.state.products)
+            console.log('====================================')
+        })
+      }
     render(){
         return <div >
          <div className="sixteen wide column" Style = {" text-align: center;"}><h1><b><Link to="/" Style="color: #0a0a0a"> Shop</Link></b></h1></div>
@@ -30,3 +42,6 @@ class Login extends  React.Component {
 }
 
 export default Login;
+
+// vin@mail.com
+// vinyasbj
