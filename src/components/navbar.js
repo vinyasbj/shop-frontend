@@ -39,11 +39,13 @@ class Navbar extends React.Component {
     return (
       
       <div>
-      <div className="ui grid">
+      {/* <div className="ui grid">
         <div className="sixteen wide column" Style = {" text-align: center;"}><h1><b><Link to="/" Style="color: #0a0a0a"> Shop</Link></b></h1></div>
         </div>
         <div className="ui two column centered grid">
-          <div className="column">
+          <div className="column"> */}
+          <br/>
+          <h1 class="ui center aligned header"><Link to="/" Style="color: #0a0a0a"> Shop </Link></h1>
             <Menu secondary >
             <Menu.Item as={Link} to={"/MensOuterwear"} name= {"Men's Outerwear"} active={activeItem ===  "Men's Outerwear" } onClick={this.handleItemClick} />
             <Menu.Item as={Link} to={"/LadiesOuterwear"} name= {"Ladies Outerwear"} active={activeItem ===  "Ladies Outerwear" } onClick={this.handleItemClick} />
@@ -61,8 +63,8 @@ class Navbar extends React.Component {
                 />
               </Menu.Menu>
             </Menu>
-          </div>
-        </div>
+          {/* </div>
+        </div> */}
             {/* <Route path={"/"} component={Home} exact ></Route>  
             <Route path={"/MensOuterwear"} component={MensOuterwear} exact ></Route>
             <Route path={"/LadiesOuterwear"} component={LadiesOuterwear} exact ></Route>

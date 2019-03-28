@@ -3,9 +3,10 @@ import { Button, Divider,Container, Form, Grid, Segment } from 'semantic-ui-reac
 import {BrowserRouter,Link,Route} from 'react-router-dom';
 import api from '../config/api';
 import axios from 'axios';
+
 class Login extends  React.Component {
     componentDidMount(){
-        axios.get(`${api.tickets.baseUrl}/categories/5c40a166c09638100cd4c441/products`).then((response)=>{
+        axios.get(`${api.tickets.baseUrl}/users/login`).then((response)=>{
             this.setState({
               products: response.data,
             })
