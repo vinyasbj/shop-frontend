@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Navbar from './components/navbar';
-import Home from './components/home';
+// import Navbar from './components/navbar';
+// import Home from './components/home';
 import Router from './components/router';
 import Menu from './components/navbar2';
 import './App.css'

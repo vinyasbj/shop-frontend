@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import api from '../config/api';
 import Navbar from './navbar';
-import { Divider, Grid, Image, Segment ,Dropdown,Button} from 'semantic-ui-react';
+import {  Grid, Image, Segment ,Dropdown,Button} from 'semantic-ui-react';
 // import './App.css';
 
 class Product extends Component {
@@ -14,17 +14,17 @@ class Product extends Component {
     console.log(this.props.location.state)
     console.log('===================================')
     const id = this.props.location.state.product.id;
-    const image = this.props.location.state.product.image;
-    const countryOptions = [
-      { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
-      { key: 'ax', value: 'ax', flag: 'ax', text: 'Aland Islands' },
-      { key: 'al', value: 'al', flag: 'al', text: 'Albania' },
-      { key: 'dz', value: 'dz', flag: 'dz', text: 'Algeria' }]
+    // const image = this.props.location.state.product.image;
+    // const countryOptions = [
+    //   { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
+    //   { key: 'ax', value: 'ax', flag: 'ax', text: 'Aland Islands' },
+    //   { key: 'al', value: 'al', flag: 'al', text: 'Albania' },
+    //   { key: 'dz', value: 'dz', flag: 'dz', text: 'Algeria' }]
     axios.get(`${api.tickets.baseUrl}/products/${id}`).then((response)=>{
       this.setState({
         product: response.data,
       })
-      const product = this.state.product;
+      // const product = this.state.product;
       console.log('====================================')
       console.log(this.state.product)
       console.log('====================================')

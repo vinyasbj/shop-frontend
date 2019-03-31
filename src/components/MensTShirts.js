@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import {BrowserRouter,Link,Route} from 'react-router-dom';
-import { Card, Grid,Icon,Segment, Image } from 'semantic-ui-react';
-import Navbar from '../components/navbar';
+import React from 'react';
+import {Link} from 'react-router-dom';
+import {  Grid,Segment, Image } from 'semantic-ui-react';
+// import Navbar from '../components/navbar';
 import Menu1 from '../components/navbar2';
 import axios from 'axios';
 import api from '../config/api';
-import Product from './products';
+// import Product from './products';
 import '../App.css';
 
 class MensTShirts extends  React.Component {

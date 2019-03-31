@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import {BrowserRouter,Link,Route,Switch} from 'react-router-dom';
+import React from 'react';
+import {Link} from 'react-router-dom';
 import '../App.css';
 import { Grid, Segment } from 'semantic-ui-react';
-import { Card, Icon, Image } from 'semantic-ui-react';
-import Navbar from '../components/navbar';
+import { Image } from 'semantic-ui-react';
+// import Navbar from '../components/navbar';
 import Menu1 from '../components/navbar2';
 import api from '../config/api';
 import axios from 'axios';

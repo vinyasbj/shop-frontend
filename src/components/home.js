@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/navbar';
+// import Navbar from '../components/navbar';
 import Menu from '../components/navbar2';
 // import axios from 'axios'
 // import api from '../config/api'

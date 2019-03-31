@@ -1,8 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import {BrowserRouter,Route,Switch} from 'react-router-dom';
-import { Card, Icon, Image } from 'semantic-ui-react';
-import { Grid, Segment } from 'semantic-ui-react';
+// import {BrowserRouter,Route,Switch} from 'react-router-dom';
+// import { Card, Icon, Image } from 'semantic-ui-react';
+import { Grid , Image } from 'semantic-ui-react';
 function Detail(props){
     // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     console.log('====================================')

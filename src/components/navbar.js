@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-import { Input, Menu, SearchCategory } from 'semantic-ui-react'
+import { Input, Menu} from 'semantic-ui-react'
 import api from '../config/api'
-import {BrowserRouter,Link,Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '../App.css';
 // import Router from './router'
 // import Home from '../components/home';

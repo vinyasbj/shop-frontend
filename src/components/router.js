@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import App from "../App";
-import Navbar from '../components/navbar';
-import Home from '../components/home';
+// import App from "../App";
+// import Navbar from '../components/navbar';
+// import Home from '../components/home';
 import Banner from '../components/banner';
 import MensOuterwear from '../components/MensOuterwear';
 import LadiesOuterwear from '../components/LadiesOuterwear';

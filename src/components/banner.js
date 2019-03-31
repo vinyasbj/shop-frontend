@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../components/navbar';
+// import Navbar from '../components/navbar';
 import Menu1 from '../components/navbar2';
 import {Segment,Grid} from "semantic-ui-react";
 // import axios from 'axios'

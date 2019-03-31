@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Divider,Container, Form, Grid, Segment } from 'semantic-ui-react';
-import {BrowserRouter,Link,Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import api from '../config/api';
 import axios from 'axios';
 
