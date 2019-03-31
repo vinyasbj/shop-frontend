@@ -33,9 +33,9 @@ class MensOuterwear extends  React.Component {
         return( 
             <div>
             <Navbar/>
-                <div className="ui grid button computer only">
-                    <img id="img" alt="Men's Outerwear" Style="opacity: 1; transition: opacity 0.5s ease 0s;" src="https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg"/>
-               </div> 
+                <Segment placeholder Style="box-shadow: none; padding: unset">
+                    <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg"/>
+                </Segment>
                 <Grid container columns={3}>
                 {this.state.products.map(product => {
                   return <Grid.Column >

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {BrowserRouter,Link,Route} from 'react-router-dom';
-import { Card, Grid,Icon, Image } from 'semantic-ui-react';
+import { Card, Grid,Icon, Segment,Image } from 'semantic-ui-react';
 import Navbar from '../components/navbar';
 import axios from 'axios';
 import api from '../config/api';
@@ -30,8 +30,11 @@ class LadiesOuterwear extends  React.Component {
             <div>
             <Navbar/>
                 <div className="ui grid button">
-                <img id="img" alt="Men's Outerwear" Style="opacity: 1; transition: opacity 0.5s ease 0s; margin-bottom: 40px; outline: none;  float: left; width: 126%; height: 73%;" src="https://shop.polymer-project.org/esm-bundled/images/ladies_tshirts.jpg"/>
+                
                </div> 
+               <Segment placeholder Style="box-shadow: none; padding: unset">
+               <img id="img" alt="Ladies's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/ladies_tshirts.jpg"/>
+                </Segment>
                <Grid container columns={3}>
                {this.state.products.map(product => {
                   return <Grid.Column >
