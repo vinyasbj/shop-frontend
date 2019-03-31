@@ -29,11 +29,8 @@ class LadiesOuterwear extends  React.Component {
         return(
             <div>
             <Navbar/>
-                <div className="ui grid button">
-                
-               </div> 
                <Segment placeholder Style="box-shadow: none; padding: unset">
-               <img id="img" alt="Ladies's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/ladies_tshirts.jpg"/>
+                <img id="img" alt="Ladies's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/ladies_tshirts.jpg"/>
                 </Segment>
                <Grid container columns={3}>
                {this.state.products.map(product => {
