@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter,Link,Route} from 'react-router-dom';
 import { Card, Grid,Icon,Segment, Image } from 'semantic-ui-react';
 import Navbar from '../components/navbar';
+import Menu1 from '../components/navbar2';
 import axios from 'axios';
 import api from '../config/api';
 import Product from './products';
@@ -28,7 +29,8 @@ class MensTShirts extends  React.Component {
     render(){
         return(
             <div>
-            <Navbar/>
+            {/* <Navbar/> */}
+            <Menu1/>
                <Segment placeholder Style="box-shadow: none; padding: unset">
                <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/mens_tshirts.jpg"/>
                 </Segment> 
