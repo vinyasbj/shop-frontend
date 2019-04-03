@@ -3,30 +3,43 @@ import { Button, Divider,Container, Form, Grid, Segment } from 'semantic-ui-reac
 import {Link} from 'react-router-dom';
 import api from '../config/api';
 import axios from 'axios';
+var jwt = require('json-web-token');
 
 class Login extends  React.Component {
     constructor(props){
       super(props);
       this.state = {
         email: "",
-        password: ""
+        password: "",
+        token: ""
       }
       this.login = this.login.bind(this);
+      this.fetchUser = this.fetchUser.bind(this);
       this.onChange = this.onChange.bind(this);
     }
 
     login(){
       console.log('====================================')
-      console.log(this.state)
-      console.log("login fuction")
+      // console.log(this.state)
+      // console.log("login fuction")
       console.log('====================================')
-      axios.post(`${api.tickets.baseUrl}/users/login`, { email: "vinyas555@gmail.com",password: "12345678"}).then((response)=>{
-        
-          // return response.data
-          // console.log('====================================')
-          console.log(response.headers);
-          console.log(response.data);
-          
+      axios.post(`${api.tickets.baseUrl}/users/login`, this.state).then((response)=>{
+        // console.log(response.data.token);
+        this.setState({token: response.data.token})
+        return this.fetchUser(this.state.token);  
+      })
+    }
+    fetchUser(token){
+      // console.log(token.toString());
+      axios.post(`${api.tickets.baseUrl}/users/token`,{token: token.toString()}).then((response)=>{
+        console.log(response.data);
+        let responseJSON = response;
+        if(responseJSON.userData){
+          sessionStorage.setItem("userData", responseJSON);
+          console.log("Home page");
+        }else{
+          console.log("error login");
+        }
     })
     }
 
@@ -55,7 +68,7 @@ class Login extends  React.Component {
       <Grid.Column>
         <Form>
           <Form.Input icon='user' iconPosition='left'  name= "email" label='Username' placeholder='Username' onChange = {this.onChange} />
-          <Form.Input icon='lock' iconPosition='left'  name= " password" label='Password' type='password'  onChange = {this.onChange} />
+          <Form.Input icon='lock' iconPosition='left'  name= "password" label='Password' type='password'  onChange = {this.onChange} />
 
           <Button content='Login' onClick= {this.login} primary/>
         </Form>
