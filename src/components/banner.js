@@ -2,13 +2,37 @@ import React from 'react';
 // import Navbar from '../components/navbar';
 import Menu1 from '../components/navbar2';
 import {Segment,Grid} from "semantic-ui-react";
+import {Redirect} from "react-router-dom";
 // import axios from 'axios'
 // import api from '../config/api'
 import '../App.css';
 
 
 class Banner extends  React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            redirect: false
+        }
+        this.logout = this.logout.bind(this);
+    }
+
+    componentWillMount(){
+        if(sessionStorage.getItem("userData")){
+            console.log("user data present");
+        }else{
+            this.setState({redirect: true});
+        }
+    }
+
+    logout(){
+        sessionStorage.setItem("userData","");
+        sessionStorage.clear();
+    }
     render(){
+        if (this.state.redirect){
+            return (<Redirect to={'/login'}/>)
+          }
         return(
             // <Container>
             <div>

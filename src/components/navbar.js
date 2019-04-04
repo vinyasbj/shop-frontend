@@ -19,8 +19,14 @@ class Navbar extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      name: []
+      name: [],
+      redirect: false
     }
+  }
+
+  logout(){
+    sessionStorage.setItem("userData","");
+    sessionStorage.clear();
   }
 
   componentDidMount(){

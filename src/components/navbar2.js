@@ -5,10 +5,23 @@ import {Link} from 'react-router-dom';
 class Menu1 extends React.Component{
     state = { activeItem: "" }
 
+    constructor(props){
+        super(props);
+        this.state = {
+            redirect: false
+        }
+        this.logout = this.logout.bind(this);
+    }
+
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+    logout(){
+        sessionStorage.setItem("userData","");
+        sessionStorage.clear();
+    }
     render() {
         const { activeItem } = this.state
-
+        const isLoggedIn = this.redirect;
     return (<div>
     <br/>
     <h1 class="ui center aligned header"><Link to="/" Style="color: #0a0a0a"> Shop </Link></h1>
@@ -41,6 +54,23 @@ class Menu1 extends React.Component{
             active={activeItem ===  "Ladies T-Shirts"}
             onClick={this.handleItemClick}
           />
+        {isLoggedIn ? (
+          <Menu.Item
+            as={Link} 
+            to={"/login"}
+            name= "Login"
+            active={activeItem ===  "Login"}
+            Style= "right: 0; position: absolute;"
+            onClick={this.handleItemClick}
+          />) : (
+          <Menu.Item
+            as={Link} 
+            to={"/login"}
+            name= "Logout"
+            active={activeItem ===  "Logout"}
+            Style= "right: 0; position: absolute;"
+            onClick={this.logout}
+          /> )}
         </Menu>
       </Segment>
     </div>
