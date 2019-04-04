@@ -3,7 +3,7 @@ import { Button, Divider,Container, Form, Grid, Segment } from 'semantic-ui-reac
 import {Link} from 'react-router-dom';
 import api from '../config/api';
 import axios from 'axios';
-var jwt = require('json-web-token');
+import {Redirect} from 'react-router-dom';
 
 class Login extends  React.Component {
     constructor(props){
@@ -11,7 +11,8 @@ class Login extends  React.Component {
       this.state = {
         email: "",
         password: "",
-        token: ""
+        token: "",
+        redirect: false
       }
       this.login = this.login.bind(this);
       this.fetchUser = this.fetchUser.bind(this);
@@ -34,13 +35,15 @@ class Login extends  React.Component {
       axios.post(`${api.tickets.baseUrl}/users/token`,{token: token.toString()}).then((response)=>{
         console.log(response.data);
         let responseJSON = response;
-        if(responseJSON.userData){
-          sessionStorage.setItem("userData", responseJSON);
-          console.log("Home page");
+        sessionStorage.setItem("userData", JSON.stringify(responseJSON));
+        const user = sessionStorage.getItem('userData');
+        if(user){
+          this.setState({redirect: true});
+          console.log("login");
         }else{
           console.log("error login");
         }
-    })
+      })
     }
 
     onChange(e){
@@ -60,30 +63,32 @@ class Login extends  React.Component {
     //     })
     //   }
     render(){
-        return <div >
+      if (this.state.redirect){
+        return (<Redirect to={'/'}/>)
+      }
+        return( <div >
          <div className="sixteen wide column" Style = {" text-align: center;"}><h1><b><Link to="/" Style="color: #0a0a0a"> Shop</Link></b></h1></div>
         <Container Style= "position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);width: 40%; height: 50%;" >
              <Segment placeholder>
-    <Grid columns={2} relaxed='very' stackable>
-      <Grid.Column>
-        <Form>
-          <Form.Input icon='user' iconPosition='left'  name= "email" label='Username' placeholder='Username' onChange = {this.onChange} />
-          <Form.Input icon='lock' iconPosition='left'  name= "password" label='Password' type='password'  onChange = {this.onChange} />
+              <Grid columns={2} relaxed='very' stackable>
+                <Grid.Column>
+                  <Form>
+                    <Form.Input icon='user' iconPosition='left'  name= "email" label='Username' placeholder='Username' onChange = {this.onChange} />
+                    <Form.Input icon='lock' iconPosition='left'  name= "password" label='Password' type='password'  onChange = {this.onChange} />
 
-          <Button content='Login' onClick= {this.login} primary/>
-        </Form>
-      </Grid.Column>
+                    <Button content='Login' onClick= {this.login} primary/>
+                  </Form>
+                </Grid.Column>
 
-      <Grid.Column verticalAlign='middle'>
-        <Button content='Sign up' icon='signup' size='big' />
-      </Grid.Column>
-    </Grid>
-
-    <Divider vertical>Or</Divider>
-  </Segment>
-  </Container>
+                <Grid.Column verticalAlign='middle'>
+                  <Button content='Sign up' icon='signup' size='big' />
+                </Grid.Column>
+              </Grid>
+          <Divider vertical>Or</Divider>
+          </Segment>
+      </Container>
         </div>
-    }
+        )}
 }
 
 export default Login;
