@@ -10,7 +10,7 @@ import LadiesOuterwear from '../components/LadiesOuterwear';
 import MensTShirts from '../components/MensTShirts';
 import LadiesTShirts from '../components/LadiesTShirts';
 import ListProduct from '../components/ListProducts';
-import AddProduct from '../components/AddProducts';
+import AddProduct from './AddProduct';
 import Product from "./products";
 import Login from "./login";
 
@@ -27,7 +27,7 @@ const Router = () => (
         <Route path={"/LadiesT-Shirts"} component={LadiesTShirts} exact ></Route>
         <Route path="/product/:id" component={Product} />
         <Route path="/Admin/list_products" component={ListProduct} />
-        <Route path="/Admin/add_products" component={AddProduct} />
+        <Route path="/Admin/add_product" component={AddProduct} />
     </Switch>
   </BrowserRouter>
 );

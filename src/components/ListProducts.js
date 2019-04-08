@@ -23,8 +23,10 @@ class ListProduct extends React.Component {
         })
       }    
     render(){
-        return(
-            <div className= "ui container" Style= "margin-top: 10%;">
+        return( <div>
+
+            <h1 class="ui center aligned header"><Link to="/" Style="color: #0a0a0a"> Shop </Link></h1>
+            <div className= "ui container">
                 <Table compact celled definition>
                 <Table.Header>
                 <Table.Row>
@@ -58,8 +60,8 @@ class ListProduct extends React.Component {
                 <Table.Row>
                     <Table.HeaderCell />
                     <Table.HeaderCell colSpan='6'>
-                    <Button floated='right' icon labelPosition='left' primary size='small'>
-                        <Icon name='user' /> Add User
+                    <Button floated='right' icon labelPosition='left' as={Link} to={"/Admin/add_product"} primary size='small'>
+                        <Icon name='user' /> Add Product
                     </Button>
                     <Button size='small'>Approve</Button>
                     <Button disabled size='small'>
@@ -69,6 +71,7 @@ class ListProduct extends React.Component {
                 </Table.Row>
                 </Table.Footer>
             </Table> 
+            </div>
             </div>
         )
     }
