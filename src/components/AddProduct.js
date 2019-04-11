@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import ImageUploader from 'react-images-upload';
 // import Select from 'react-select';
 import {
     Button,
@@ -12,7 +13,7 @@ import {
 import api from '../config/api';
 import axios from 'axios';
 
-const options = []
+// const options = []
 
 class AddProduct extends React.Component {
     // state = {}
@@ -21,75 +22,98 @@ class AddProduct extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-          categories: [],
           name: "",
           price: "",
           stock: "",
           productImage: "",
-          codEligible: "",
+          codEligible: false,
           description: "",
           category: "",
           selectedOption: "",
           redirect: false
         }
         this.onChange = this.onChange.bind(this);
+        this.onUpload = this.onUpload.bind(this);
         this.submit = this.submit.bind(this);
       }
 
     onChange(e){
-        this.setState({[e.target.name]: e.target.value})
-        // console.log(e.target.name)
-        // console.log(e.target.value)
+        this.setState({
+            name: e.target.value
+        })
+        console.log(e.target);
+        
+    }
+    onUpload(e){
+        // console.log(picture[0])
+        // e.preventDefault();
+        
+        // let file = e.target.files[0];
+        this.setState({productImage: e.target.files[0]})
+        // console.log(this.state.productImage)
     }
     
-    submit(){
+    submit(e){
+        e.preventDefault();
         console.log(this.state)
-        axios.post(`${api.tickets.baseUrl}/products`,this.state.toString()).then((response)=>{
+        const data = new FormData()
+        data.append('productImage', this.state.productImage)
+        data.append('name',this.state.name)
+        data.append('price',this.state.price)
+        data.append('stock',this.state.stock)
+        data.append('category',this.state.category)
+        data.append('description',this.state.description)
+        data.append('codEligible',this.state.codEligible)
+        // formData.append('productImage',this.state.productImage);
+        
+        console.log(data);
+        axios.post(`${api.tickets.baseUrl}/products`,data ,{product: this.state})
+        .then((response)=>{
             console.log(response.data);
         })
     }
 
-    componentDidMount(){
-        axios.get(`${api.tickets.baseUrl}/categories`).then((response)=>{
-            this.setState({
-                categories: response.data
-            })
-            this.state.categories.map(category => {
-                const c = {};
-                c.text = category.name
-                c.value = category._id
-                options.push(c)
-                console.log(c)
-            })
-        })
-      }
+    // componentDidMount(){
+        // axios.get(`${api.tickets.baseUrl}/categories`).then((response)=>{
+        //     this.setState({
+        //         categories: response.data
+        //     })
+        //     this.state.categories.map(category => {
+        //         const c = {};
+        //         c.text = category.name
+        //         c.value = category._id
+        //         options.push(c)
+        //         console.log(c)
+        //     })
+        // })
+    //   }
     render() {
       return ( 
           <div>
             <h1 class="ui center aligned header"><Link to="/" Style="color: #0a0a0a"> Shop </Link></h1>
             <div  className= "ui container" > 
-                <Form>
+                <Form onSubmit={this.submit}>
                 <Form.Group widths='equal'>
                     <Form.Field
                     control={Input}
                     label='Product Name'
                     placeholder='Product name'
                     name="name"
-                    onChange = {this.onChange} 
+                    onChange = { e => this.setState({ name : e.target.value }) }
                     />
                     <Form.Field
                     control={Input}
                     label='Price'
                     placeholder='Price'
                     name= "price"
-                    onChange = {this.onChange} 
+                    onChange = { e => this.setState({ price : e.target.value }) }
                     />
                     <Form.Field
                     control={Input}
                     label='Category'
                     placeholder='Category'
                     name= "category"
-                    onChange = {this.onChange} 
+                    onChange = { e => this.setState({ category : e.target.value }) }
                     />
                     {/* <Select
                     label='Categories'
@@ -103,28 +127,29 @@ class AddProduct extends React.Component {
                     control={Input}
                     label='Stock'
                     placeholder='Stock'
-                    onChange = {this.onChange}
                     name="stock" 
+                    onChange = { e => this.setState({ stock : e.target.value }) }
                     />
                     <Form.Field>
                         <label>File</label>
-                        <input type="file" name="productImage" onChange={this.onChange} />
+                        <input type="file" name="productImage" onChange={this.onUpload } />
                     </Form.Field>
                 </Form.Group>
                 <Form.Field
                     control={TextArea}
                     label='Description'
                     placeholder='Tell us more about product...'
-                    onChange = {this.onChange}
+                    onChange = { e => this.setState({ description : e.target.value }) }
                     name = "description"
                 />
                 <Form.Field
                     control={Checkbox}
                     label='COD'
-                    onChange = {this.onChange}
+                    checked={this.state.codEligible}
+                    onChange = { e => this.setState({ codEligible : !this.state.codEligible }) }
                     name = "codEligible"
                 />
-                <Form.Field control={Button} onClick= {this.submit}>Submit</Form.Field>
+                <Form.Field control={Button} >Submit</Form.Field>
                 </Form>
             </div>
           </div>
