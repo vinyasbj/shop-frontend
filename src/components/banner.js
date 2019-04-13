@@ -30,9 +30,9 @@ class Banner extends  React.Component {
         sessionStorage.clear();
     }
     render(){
-        if (this.state.redirect){
-            return (<Redirect to={'/login'}/>)
-          }
+        // if (this.state.redirect){
+        //     return (<Redirect to={'/login'}/>)
+        //   }
         return(
             // <Container>
             <div>
