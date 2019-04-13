@@ -37,6 +37,8 @@ class ListProduct extends React.Component {
                     <Table.HeaderCell>Price</Table.HeaderCell>
                     <Table.HeaderCell>Cod Eligible</Table.HeaderCell>
                     <Table.HeaderCell>Created At</Table.HeaderCell>
+                    <Table.HeaderCell>Show</Table.HeaderCell>
+                    <Table.HeaderCell>Edit</Table.HeaderCell>
                 </Table.Row>
                 </Table.Header>
 
@@ -52,6 +54,8 @@ class ListProduct extends React.Component {
                     <Table.Cell>${product.price}</Table.Cell>
                     <Table.Cell>{product.codEligible}</Table.Cell>
                     <Table.Cell>{product.createdAt}</Table.Cell>
+                    <Table.Cell><Button size='small'  as={Link} to={"/Admin/show_product"} >Show</Button></Table.Cell>
+                    <Table.Cell><Button size='small'  as={Link} to={`/Admin/edit_product/${product._id}`} >Edit</Button></Table.Cell>
                     </Table.Row>
                 })}
                 </Table.Body>

@@ -11,6 +11,7 @@ import MensTShirts from '../components/MensTShirts';
 import LadiesTShirts from '../components/LadiesTShirts';
 import ListProduct from '../components/ListProducts';
 import AddProduct from './AddProduct';
+import EditProduct from './EditProduct';
 import Product from "./products";
 import Login from "./login";
 
@@ -28,6 +29,7 @@ const Router = () => (
         <Route path="/product/:id" component={Product} />
         <Route path="/Admin/list_products" component={ListProduct} />
         <Route path="/Admin/add_product" component={AddProduct} />
+        <Route path="/Admin/edit_product/:id" component={EditProduct} />
     </Switch>
   </BrowserRouter>
 );

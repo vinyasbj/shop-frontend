@@ -67,9 +67,9 @@ class Login extends  React.Component {
         return (<Redirect to={'/'}/>)
       }
       
-      if (sessionStorage.getItem("userData")){
-        return (<Redirect to={'/'}/>)
-      }
+      // if (sessionStorage.getItem("userData")){
+      //   return (<Redirect to={'/'}/>)
+      // }
         return( <div >
          <div className="sixteen wide column" Style = {" text-align: center;"}><h1><b><Link to="/" Style="color: #0a0a0a"> Shop</Link></b></h1></div>
         <Container Style= "position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);width: 40%; height: 50%;" >
