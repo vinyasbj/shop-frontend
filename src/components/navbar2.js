@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Menu, Segment } from 'semantic-ui-react';
+import { Menu, Segment,Button,Icon } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 class Menu1 extends React.Component{
     state = { activeItem: "" }
@@ -52,6 +52,13 @@ class Menu1 extends React.Component{
             to={"/LadiesT-Shirts"}
             name= "Ladies T-Shirts"
             active={activeItem ===  "Ladies T-Shirts"}
+            onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            as={Link} 
+            to={"/Admin/list_products"}
+            name= "Admin"
+            active={activeItem ===  "Admin"}
             onClick={this.handleItemClick}
           />
         {isLoggedIn ? (
