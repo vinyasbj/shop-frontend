@@ -41,7 +41,7 @@ class MensTShirts extends  React.Component {
                             pathname: `/product/${product._id}`,
                             state: { product: {id: product._id,name: product.name,price: product.price,description: product.description, stock: product.stock,image: "https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg" } }
                           }}>
-                   <Image  src="https://shop.polymer-project.org/esm-bundled/data/images/10-14157A.jpg" />
+                   <Image  src={product.productImage} />
                     <div className="content ">
                       <p className="header" Style= "text-align: center;">{product.name}</p>
                       <p Style= "text-align: center;">${product.price}</p>

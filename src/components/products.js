@@ -38,7 +38,7 @@ class Product extends Component {
       <Grid columns={2} relaxed='very'>
         <Grid.Column>
           <p>
-            <Image src= "https://shop.polymer-project.org/esm-bundled/data/images/10-15068A.jpg" />
+            <Image src= {this.state.product.productImage} />
           </p>
         </Grid.Column>
         <Grid.Column Style=" right: 100px; position: absolute; margin: 64px 32px; width: 50%; max-width: 400px; transition: opacity 0.4s;">

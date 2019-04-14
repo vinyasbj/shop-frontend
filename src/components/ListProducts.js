@@ -35,7 +35,8 @@ class ListProduct extends React.Component {
                     <Table.HeaderCell>Category</Table.HeaderCell>
                     <Table.HeaderCell>Code</Table.HeaderCell>
                     <Table.HeaderCell>Price</Table.HeaderCell>
-                    <Table.HeaderCell>Cod Eligible</Table.HeaderCell>
+                    {/* <Table.HeaderCell>Cod Eligible</Table.HeaderCell> */}
+                    <Table.HeaderCell>Image</Table.HeaderCell>
                     <Table.HeaderCell>Created At</Table.HeaderCell>
                     <Table.HeaderCell>Show</Table.HeaderCell>
                     <Table.HeaderCell>Edit</Table.HeaderCell>
@@ -51,8 +52,9 @@ class ListProduct extends React.Component {
                     <Table.Cell>{product.name}</Table.Cell>
                     <Table.Cell>{product.category.name}</Table.Cell>
                     <Table.Cell>{product.code}</Table.Cell>
-                    <Table.Cell>${product.price}</Table.Cell>
-                    <Table.Cell>{product.codEligible}</Table.Cell>
+                    <Table.Cell>{product.price}</Table.Cell>
+                    {/* <Table.Cell>{product.codEligible}</Table.Cell> */}
+                    <Table.Cell> <img src={product.productImage} Style="width: 150px; height: 25%;"/> </Table.Cell>
                     <Table.Cell>{product.createdAt}</Table.Cell>
                     <Table.Cell><Button size='small'  as={Link} to={"/Admin/show_product"} >Show</Button></Table.Cell>
                     <Table.Cell><Button size='small'  as={Link} to={`/Admin/edit_product/${product._id}`} >Edit</Button></Table.Cell>
