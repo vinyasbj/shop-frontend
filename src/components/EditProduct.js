@@ -1,6 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import ImageUploader from 'react-images-upload';
+import {Link,Redirect} from 'react-router-dom';
 // import Select from 'react-select';
 import {
     Button,
@@ -64,9 +63,15 @@ class EditProduct extends React.Component {
         // formData.append('productImage',this.state.productImage);
         
         console.log(data);
-        axios.put(`${api.tickets.baseUrl}/products/${id}`,data ,{product: this.state})
+        axios.put(`${api.tickets.baseUrl}/products/${id}`,data )
         .then((response)=>{
             console.log(response.data);
+            if(response.data.notice === "Successfully updated a product"){
+                this.setState({redirect: true});
+                console.log("added ");
+              }else{
+                console.log("error adding product");
+              }
         })
     }
 
@@ -90,6 +95,9 @@ class EditProduct extends React.Component {
         })
       }
     render() {
+        if (this.state.redirect){
+            return (<Redirect to={'/Admin/list_products'}/>)
+          }
       return ( 
           <div>
             <h1 class="ui center aligned header"><Link to="/" Style="color: #0a0a0a"> Shop </Link></h1>
