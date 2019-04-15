@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link,Redirect} from 'react-router-dom';
-import ImageUploader from 'react-images-upload';
 // import Select from 'react-select';
 import {
     Button,

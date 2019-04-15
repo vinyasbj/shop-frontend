@@ -1,8 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {  Grid,Segment, Image } from 'semantic-ui-react';
-// import Navbar from '../components/navbar';
-import Menu1 from '../components/navbar2';
+import NewNav from '../components/NewNavbar';
 import axios from 'axios';
 import api from '../config/api';
 // import Product from './products';
@@ -29,8 +28,7 @@ class MensTShirts extends  React.Component {
     render(){
         return(
             <div>
-            {/* <Navbar/> */}
-            <Menu1/>
+            <NewNav/>
                <Segment placeholder Style="box-shadow: none; padding: unset">
                <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/mens_tshirts.jpg"/>
                 </Segment> 

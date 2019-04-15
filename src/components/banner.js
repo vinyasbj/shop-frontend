@@ -1,8 +1,9 @@
 import React from 'react';
 // import Navbar from '../components/navbar';
-import Menu1 from '../components/navbar2';
+// import Menu1 from '../components/navbar2';
+import NewNav from '../components/NewNavbar';
 import {Segment,Grid} from "semantic-ui-react";
-import {Redirect} from "react-router-dom";
+// import {Redirect} from "react-router-dom";
 // import axios from 'axios'
 // import api from '../config/api'
 import '../App.css';
@@ -30,14 +31,15 @@ class Banner extends  React.Component {
         sessionStorage.clear();
     }
     render(){
-        // if (this.state.redirect){
+        // if (sessionStorage.getItem("userData")){
         //     return (<Redirect to={'/login'}/>)
         //   }
         return(
             // <Container>
             <div>
                 {/* <Navbar/> */}
-                <Menu1/>
+                {/* <Menu1/> */}
+                <NewNav/>
                 <Segment placeholder Style="box-shadow: none; padding: unset">
                     <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg"/>
                 </Segment>

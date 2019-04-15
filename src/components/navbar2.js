@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Menu, Segment,Button,Icon } from 'semantic-ui-react';
+import { Menu, Segment} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 class Menu1 extends React.Component{
     state = { activeItem: "" }
@@ -26,7 +26,7 @@ class Menu1 extends React.Component{
     <br/>
     <h1 class="ui center aligned header"><Link to="/" Style="color: #0a0a0a"> Shop </Link></h1>
       <Segment Style="box-shadow: none; border: none;">
-        <Menu pointing secondary>
+        <Menu pointing secondary  className="topnav">
           <Menu.Item 
           as = {Link}
           to={"/MensOuterwear"}
