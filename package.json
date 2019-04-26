@@ -4,7 +4,12 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "css-loader": "^2.1.1",
+    "jquery": "^3.4.0",
     "json-web-token": "^3.0.0",
+    "lodash": "^4.17.11",
+    "popper.js": "^1.15.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-images-upload": "^1.2.6",
@@ -15,6 +20,7 @@
     "semantic-ui": "^2.4.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.84.0",
+    "style-loader": "^0.23.1",
     "turbo360": "^1.8.61"
   },
   "scripts": {

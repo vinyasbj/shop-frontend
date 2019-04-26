@@ -1,7 +1,7 @@
 import React from 'react';
 // import Navbar from '../components/navbar';
-// import Menu1 from '../components/navbar2';
-import NewNav from '../components/NewNavbar';
+import Menu1 from '../components/navbar2';
+// import NewNav from '../components/NewNavbar';
 import {Segment,Grid} from "semantic-ui-react";
 // import {Redirect} from "react-router-dom";
 // import axios from 'axios'
@@ -38,8 +38,8 @@ class Banner extends  React.Component {
             // <Container>
             <div>
                 {/* <Navbar/> */}
-                {/* <Menu1/> */}
-                <NewNav/>
+                <Menu1/>
+                {/* <NewNav/> */}
                 <Segment placeholder Style="box-shadow: none; padding: unset">
                     <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg"/>
                 </Segment>

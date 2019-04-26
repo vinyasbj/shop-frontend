@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Menu } from 'semantic-ui-react';
+import { Menu,Sidebar } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 class NewNav extends React.Component{
     state = { activeItem: "" }
@@ -21,12 +21,12 @@ class NewNav extends React.Component{
     }
     render() {
         const { activeItem } = this.state
-        // const isLoggedIn = this.redirect;
+        const isLoggedIn = this.redirect;
     return (
     <div>
         <br/>
         <h1 className="ui center aligned header"><Link to="/" Style="color: #0a0a0a"> Shop </Link></h1>
-        <div class="ui secondary menu">
+        <div class="ui pointing secondary menu" Style="margin-left: 18%; margin-right: 20%;">
             <Menu.Item 
             as = {Link}
             to={"/MensOuterwear"}
@@ -50,7 +50,7 @@ class NewNav extends React.Component{
             <Menu.Item
                 as={Link} 
                 to={"/LadiesT-Shirts"}
-                name="Ladies T-Shirts"
+                name= "Ladies T-Shirts"
                 active={activeItem ===  "Ladies T-Shirts"}
                 onClick={this.handleItemClick}
             />
@@ -61,7 +61,7 @@ class NewNav extends React.Component{
                 active={activeItem ===  "Admin"}
                 onClick={this.handleItemClick}
             />
-            {/* <div className="right menu">
+            <div className="right menu">
             {isLoggedIn ? (
                 <Menu.Item
                     as={Link} 
@@ -77,7 +77,7 @@ class NewNav extends React.Component{
                     active={activeItem ===  "Logout"}
                     onClick={this.logout}
                 /> )}
-            </div> */}
+            </div>          
         </div>
     </div>
     )}
