@@ -1,6 +1,8 @@
 import React from 'react';
 // import Navbar from '../components/navbar';
 import Menu1 from '../components/navbar2';
+import { findDOMNode } from 'react-dom';
+import $ from 'jquery';
 // import NewNav from '../components/NewNavbar';
 import {Segment,Grid} from "semantic-ui-react";
 // import {Redirect} from "react-router-dom";
@@ -17,7 +19,11 @@ class Banner extends  React.Component {
         }
         this.logout = this.logout.bind(this);
     }
-
+    handleToggle = () =>{
+        const el = findDOMNode(this.refs.toggle);
+        $(el).slideToggle();
+      }
+    
     componentWillMount(){
         if(sessionStorage.getItem("userData")){
             console.log("user data present");
@@ -39,8 +45,22 @@ class Banner extends  React.Component {
             <div>
                 {/* <Navbar/> */}
                 <Menu1/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
                 {/* <NewNav/> */}
-                <Segment placeholder Style="box-shadow: none; padding: unset">
+                 <Segment placeholder Style="box-shadow: none; padding: unset" ref="toggle">
                     <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg"/>
                 </Segment>
                 <Segment placeholder Style="box-shadow: none; padding: unset; border: none; margin-top: -3%;">

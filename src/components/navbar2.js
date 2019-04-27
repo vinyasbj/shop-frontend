@@ -14,11 +14,6 @@ import { Container,
 
 
 class Menu1 extends React.Component{
-  handleToggle = () =>{
-    const el = findDOMNode(this.refs.toggle);
-    $(el).slideToggle();
-  }
-
   componentDidMount(){
   }
   render() {
@@ -29,12 +24,11 @@ class Menu1 extends React.Component{
     });
     
     return (
-    <div>
-
+    <div className="">
       <nav>
         <div className="logo">
-          <h4>The Nav</h4>
-          <button className="hb-button"><i className="fa fa-bars"></i> </button>
+        <h1 class="ui center aligned header"><Link to="/" Style="color: #0a0a0a"> Shop </Link></h1>
+          <button className="hb-button" onClick={this.handleToggle}><i className="fa fa-bars"></i> </button>
         </div>
         <ul>
           <li> <Link  to={"/MensOuterwear"}>MensOuterwear</Link></li>
@@ -42,7 +36,6 @@ class Menu1 extends React.Component{
           <li> <Link  to={"/MensT-Shirts"}>MensT-Shirts</Link></li>
           <li> <Link  to={"/LadiesT-Shirts"}>LadiesT-Shirts</Link></li>
         </ul>
-
       </nav>
     </div>
     )}

@@ -30,6 +30,7 @@ nav{
   border-radius: 3px;
   cursor: pointer;
   display: none;
+  margin-top: -35px;
 }
 nav a{
   text-decoration: none;
@@ -136,6 +137,7 @@ nav ul li{
   }
   nav ul.show{
     max-height: 20em;
+    padding-top: -50%;
   }
   nav ul li{
     box-sizing: border-box;
