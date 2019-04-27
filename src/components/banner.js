@@ -59,6 +59,9 @@ class Banner extends  React.Component {
                 <br/>
                 <br/>
                 <br/>
+                <br/>
+                <br/>
+                <br/>
                 {/* <NewNav/> */}
                  <Segment placeholder Style="box-shadow: none; padding: unset" ref="toggle">
                     <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg"/>
