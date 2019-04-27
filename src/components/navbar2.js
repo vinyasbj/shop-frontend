@@ -18,13 +18,13 @@ class Menu1 extends React.Component{
   render() {
     
     return (
-    <div className="">
-      <nav>
+    <div>
+      <nav Style="z-index: 999; margin-top: -14px;">
         {/* <div className="logo"> */}
         <h1 className="ui center aligned header"><Link to="/" Style="color: #0a0a0a"> Shop </Link></h1>
           <button className="hb-button"><i className="fa fa-bars"></i> </button>
         {/* </div> */}
-        <ul Style="margin-top: 20px; margin-right: 25%;">
+        <ul Style="margin-right: 26%;">
           <li> <Link  to={"/Admin/list_products"}>Admin</Link></li>
           <li> <Link  to={"/LadiesT-Shirts"}>LadiesT-Shirts</Link></li>
           <li> <Link  to={"/MensT-Shirts"}>MensT-Shirts</Link></li>

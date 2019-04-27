@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import api from '../config/api';
-import Navbar from './navbar';
+// import Navbar from './navbar';
+import Menu1 from '../components/navbar2';
 import {  Grid, Image, Segment ,Dropdown,Button} from 'semantic-ui-react';
 // import './App.css';
 
@@ -33,7 +34,7 @@ class Product extends Component {
   render() {
     return (
       <div>
-      <Navbar/>
+      <Menu1/>
        <Segment Style="border: none;">
       <Grid columns={2} relaxed='very'>
         <Grid.Column>

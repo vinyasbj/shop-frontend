@@ -45,36 +45,19 @@ class Banner extends  React.Component {
             <div>
                 {/* <Navbar/> */}
                 <Menu1/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
                 {/* <NewNav/> */}
                  <Segment placeholder Style="box-shadow: none; padding: unset" ref="toggle">
-                    <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg"/>
+                    <img id="img" alt="Men's Outerwear" Style="margin-top: 6%;" src="https://shop.polymer-project.org/esm-bundled/images/mens_outerwear.jpg"/>
                 </Segment>
                 <Segment placeholder Style="box-shadow: none; padding: unset; border: none; margin-top: -3%;">
-                    <h4 className="item " Style= " margin-top: 3%;">Men's Outerwear</h4>
+                    <h4 className="item " Style= " margin-top: 3%; margin-left: 46%; margin-right: 45%;">Men's Outerwear</h4>
                     <button className="ui inverted secondary button ">SHOP NOW</button>
                 </Segment>
                 <Segment placeholder Style="box-shadow: none; padding: unset">
-                    <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/ladies_outerwear.jpg"/>
+                    <img id="img" alt="Men's Outerwear" Style="margin-top: -2%; "src="https://shop.polymer-project.org/esm-bundled/images/ladies_outerwear.jpg"/>
                 </Segment>
                 <Segment placeholder Style="box-shadow: none; padding: unset; border: none; margin-top: -3%;">
-                    <h4 className="item" Style= " margin-top: 3%;">Ladies Outerwear</h4>
+                    <h4 className="item" Style= " margin-top: 3%; margin-left: 46%; margin-right: 45%;">Ladies Outerwear</h4>
                     <button className="ui inverted secondary button ">SHOP NOW</button>
                 </Segment>
                 <Grid columns={2} stackable textAlign='center'>

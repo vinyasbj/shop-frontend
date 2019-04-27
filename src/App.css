@@ -30,12 +30,12 @@ nav{
   border-radius: 3px;
   cursor: pointer;
   display: none;
-  margin-top: -35px;
+  margin-top: -44px;
 }
 nav a{
   text-decoration: none;
   color: #282828;
-  font-size: 20px;
+  font-size: 15px;
   margin: 0;
   padding: 5px;
 }

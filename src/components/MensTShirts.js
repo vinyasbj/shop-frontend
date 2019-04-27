@@ -30,25 +30,6 @@ class MensTShirts extends  React.Component {
         return(
             <div>
             <Menu1/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
                <Segment placeholder Style="box-shadow: none; padding: unset">
                <img id="img" alt="Men's Outerwear" src="https://shop.polymer-project.org/esm-bundled/images/mens_tshirts.jpg"/>
                 </Segment> 
