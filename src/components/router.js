@@ -13,7 +13,8 @@ import Menu1 from '../components/navbar2';
 import ListProduct from '../components/ListProducts';
 import AddProduct from './AddProduct';
 import EditProduct from './EditProduct';
-import Product from "./products";
+// import Product from "./products";
+import ViewProduct from "./ViewProduct";
 import Login from "./login";
 
 const Router = () => (
@@ -28,7 +29,7 @@ const Router = () => (
         <Route path={"/MensT-Shirts"} component={MensTShirts} exact ></Route>
         <Route path={"/LadiesT-Shirts"} component={LadiesTShirts} exact ></Route>
         <Route path={"/navbar"} component={Menu1} exact ></Route>
-        <Route path="/product/:id" component={Product} />
+        <Route path="/product/:id" component={ViewProduct} />
         <Route path="/Admin/list_products" component={ListProduct} />
         <Route path="/Admin/add_product" component={AddProduct} />
         <Route path="/Admin/edit_product/:id" component={EditProduct} />
